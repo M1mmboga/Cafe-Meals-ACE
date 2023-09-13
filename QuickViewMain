@@ -1,0 +1,113 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "backgroundImage": {
+                "url": "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/visual-list/assets/cafe.jpg"
+            },
+            "bleed": true,
+            "items": [
+                {
+                    "type": "Container",
+                    "minHeight": "120px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "id": "${day}",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${day}",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium"
+                                }
+                            ],
+                            "style": "emphasis"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "50px",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "&gt;",
+                                    "wrap": true,
+                                    "isVisible": false,
+                                    "id": "textSymbolExpanded${day}"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v",
+                                    "wrap": true,
+                                    "id": "textSymbolCollapsed${day}"
+                                }
+                            ],
+                            "horizontalAlignment": "Center",
+                            "verticalContentAlignment": "Center"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.ToggleVisibility",
+                        "targetElements": [
+                            "columnSet${day}",
+                            "textSymbolExpanded${day}",
+                            "textSymbolCollapsed${day}"
+                        ]
+                    }
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "80px",
+                            "style": "emphasis",
+                            "id": "${foodImage}",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "backgroundImage": {
+                                        "url": "${foodImage}"
+                                    },
+                                    "minHeight": "80px"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cuisine}",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${food}",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ],
+                    "isVisible": false,
+                    "id": "columnSet${day}"
+                }
+            ],
+            "$data": "${menus}"
+        }
+    ]
+}
