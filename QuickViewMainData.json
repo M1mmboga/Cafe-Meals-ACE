@@ -1,0 +1,16 @@
+{
+      "menus": [
+        {
+            "day" : "Monday",
+            "cuisine" : "Korean Cuisine",
+            "food" : "Description for the koren cuisine",
+            "foodImage" : "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/visual-list/assets/korean.jpg"
+        },
+        {
+            "day" : "Tuesday",
+            "cuisine" : "Italian Cuisine",
+            "food" : "Description for the peruvian cuisine",
+            "foodImage" : "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/visual-list/assets/pizza.jpg"
+        }
+      ]
+    }
